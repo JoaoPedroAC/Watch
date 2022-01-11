@@ -3,17 +3,17 @@
 const myTime = document.getElementById('Time');
 const timeButtom = document.getElementById('buton');
 const cronoButtom = document.getElementById('crono');
+let timePassingOne;
+let timePassingTwo;
 
 const onIntervals = (func) => {
-	let timePassingOne = setInterval(watch, 1000);
-	let timePassingTwo = setInterval(cronometer, 1000);
-	if (func === watch && func !== cronometer) {
-		clearInterval(timePassingTwo);
-		return (myTime.innerHTML = watch());
+	if (func === watch) {
+    timePassingOne = setInterval(watch, 1000);
+    return clearInterval(timePassingTwo);     
 	}
-	if (func === cronometer && func !== watch) {
-		clearInterval(timePassingOne);
-		return (myTime.innerHTML = cronometer());
+	if (func === cronometer) {
+    timePassingTwo = setInterval(cronometer,1000);
+    return clearInterval(timePassingOne);
 	}
 };
 // aqui é a função do meu relógio
@@ -25,11 +25,11 @@ function watch() {
 		minute: '2-digit',
 		second: '2-digit',
 	});
-	return timer;
+	return myTime.innerHTML = timer;
 }
-
+// aqui é a função do meu cronometro
 const cronometer = () => {
-	return 'carai to aqui';
+	return myTime.innerHTML = 'carai to aqui';
 };
 
 // let timePassing;

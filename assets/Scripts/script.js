@@ -6,14 +6,17 @@ const cronoButtom = document.getElementById('crono');
 let timePassingOne;
 let timePassingTwo;
 
+// Essa function é para controlar a execução e dos clicks de cada botão
 const onIntervals = (func) => {
 	if (func === watch) {
+    clearInterval(timePassingTwo);     
     timePassingOne = setInterval(watch, 1000);
-    return clearInterval(timePassingTwo);     
+    return timePassingOne;
 	}
 	if (func === cronometer) {
+    clearInterval(timePassingOne);
     timePassingTwo = setInterval(cronometer,1000);
-    return clearInterval(timePassingOne);
+    return timePassingTwo;
 	}
 };
 // aqui é a função do meu relógio

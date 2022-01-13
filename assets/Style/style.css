@@ -24,9 +24,13 @@ main {
     text-align: center;
     margin-top: 20px;
     padding: 5px 5px;
-	width: 50vw;
-	height: 30vh;
-	background: var(--colorDiv);
+	  width: 50vw;
+  	height: 30vh;
+  	background: var(--colorDiv);
     border-radius: 10px;
     text-align: left;
+}
+.cronometro{
+  /* display: flex; é so pra saber na hora do JS*/
+  display: none;
 }

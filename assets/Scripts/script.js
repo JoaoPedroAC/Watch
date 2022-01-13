@@ -2,7 +2,6 @@
 
 const myTime = document.getElementById('Time');
 const cronos = document.querySelector('div.cronometro');
-const stopButtom = document.getElementById('stop');
 let timePassingOne;
 let timePassingTwo;
 let seconds = 0;
@@ -47,7 +46,7 @@ const zeroLeft =(numeric)=> numeric < 10 ? `0${numeric}`: numeric;
 // aqui é onde se inicia a função do meu cronometro
 const cronometer = () => {
   cronos.style.display='flex';
-  myTime.innerHTML = `${zeroLeft(hours)}:${zeroLeft(minutes)}:${zeroLeft(seconds)}`
+  myTime.innerHTML = `00:00:00`;
 };
 
 // function que inicia o funcionamento
@@ -67,6 +66,7 @@ const startCronometer=()=>{
 
 // function que para o funcionamento
 const stopCronometer = (varivel) => {
+  if(seconds === 0) return alert('favor clicar em iniciar!');
   myTime.style.color = 'red';
   setTimeout(function(){
   myTime.style.color = 'black';

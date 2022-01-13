@@ -14,11 +14,13 @@ let hours = 0;
 const onIntervals = (func) => {
 	if (func === watch) {
     timePassingOne = setInterval(watch, 1000);
-    return clearInterval(timePassingTwo);
+     clearInterval(timePassingTwo);
+     return timePassingOne;
 	}
 	if (func === cronometer) {
+     clearInterval(timePassingOne);
     timePassingTwo = setInterval(cronometer,1000);
-    return clearInterval(timePassingOne);
+    return timePassingTwo;
 	}
 };
 // aqui é a função do meu relógio

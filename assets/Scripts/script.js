@@ -46,7 +46,7 @@ const zeroLeft =(numeric)=> numeric < 10 ? `0${numeric}`: numeric;
 // aqui é onde se inicia a função do meu cronometro
 const cronometer = () => {
   cronos.style.display='flex';
-  myTime.innerHTML = `00:00:00`;
+  myTime.innerHTML = `${zeroLeft(hours)}:${zeroLeft(minutes)}:${zeroLeft(seconds)}`;
 };
 
 // function que inicia o funcionamento

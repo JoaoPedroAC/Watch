@@ -38,23 +38,17 @@ function watch() {
 // aqui é a função do meu cronometro
 const cronometer = () => {
   cronos.style.display='flex';
-  if(seconds>58){
+  if(seconds>59){
     seconds=0;
     minutes++;
   }
-  if(minutes>58){
+  if(minutes>59){
     minutes=0;
     hours++;
   }
-  seconds++;
-	myTime.innerHTML = `${zeroLeft(hours)}:${zeroLeft(minutes)}:${zeroLeft(seconds)}`;
+  myTime.innerHTML = `${zeroLeft(hours)}:${zeroLeft(minutes)}:${zeroLeft(seconds++)}`;
+  // caso o secods++ estiver acima do innerHTML ele vai contar com 1 a mais
+  // seconds++;
 };
 // vai colocar 0 na esquerda
 const zeroLeft =(numeric)=> numeric < 10 ? `0${numeric}`: numeric;
-
-// let timePassing;
-// if (!timeButtom.onclick) {
-// setInterval(watch, 1000);
-// } else if (cronoButtom) {
-// 	clearInterval(timePassing);
-// }

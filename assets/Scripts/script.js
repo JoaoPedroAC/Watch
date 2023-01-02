@@ -82,3 +82,4 @@ const countZero = (varivel) =>{
   myTime.innerHTML = `${zeroLeft(hours)}:${zeroLeft(minutes)}:${zeroLeft(seconds)}`
   clearInterval(varivel);
 }
+
